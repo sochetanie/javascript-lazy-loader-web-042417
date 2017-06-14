@@ -48,6 +48,7 @@ describe('Cars', function() {
 
   describe("fetchJSON", function() {
     it('queries API for the correct listing and passes returned data to addCarsToDOM()', function(done) {
+      debugger
       var lastCar = $('#cars').children().last().children().last();
       fetchJSON();
       setTimeout(function() {

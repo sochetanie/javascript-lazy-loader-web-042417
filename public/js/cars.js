@@ -3,7 +3,6 @@
 // this is the base API url
 var baseUrl = "http://mimeocarlisting.azurewebsites.net/api/cars/";
 var pageCounter = 1;
-var carsCounter = 2;
 
 
 function formatCars(carsJSON) {
@@ -15,8 +14,8 @@ function formatCars(carsJSON) {
     carsJSON.forEach(x => {
         result += '<div class="col-md-4 car">'
         result += `<h2>${x.Make}</h2>`
-        result += `<p><strong>Model: </strong>${x.Model}</p>`
-        result += `<p><strong>Year: </strong> ${x.Year}</p>`
+        result += `<p><strong>Model:</strong> ${x.Model}</p>`
+        result += `<p><strong>Year:</strong> ${x.Year}</p>`
         result += '</div>'
     })
     result += '</div>'
@@ -35,10 +34,10 @@ function fetchJSON() {
   // on success of the ajax call, it will pass the returned data
   // to addCarsToDOM()
   $.ajax({
-    url: `${baseUrl}${pageCounter}/${carsCounter}`,
+    url: `${baseUrl}${pageCounter}/9`,
     dataType : 'jsonp',
-    success: function(data) {
-        addCarsToDOM(carsJSON)
+    success: (x) => {
+        addCarsToDOM(x)
     }
   })
   pageCounter++

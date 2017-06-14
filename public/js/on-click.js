@@ -3,6 +3,6 @@
 $(document).ready(function() {
   // add click listener here
   // it should call on fetchJSON()
-  $('#load-cars').on('click', () => fetchJSON() )
+  $('#load-cars').on('click', fetchJSON )
 
 });
